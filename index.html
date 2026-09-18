@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SKITM Smart Campus</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <div class="login-page">
+
+        <div class="login-card">
+
+            <div class="logo">🎓</div>
+
+            <h1>SKITM Smart Campus</h1>
+
+            <p class="tagline">Your campus, smarter.</p>
+
+            <h2>Student Login</h2>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter Student Name"
+            >
+
+            <input
+                type="text"
+                id="enrollment"
+                placeholder="Enter Enrollment No."
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+            >
+
+            <button onclick="login()" class="login-btn">
+                Login →
+            </button>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <div class="dashboard-page" id="dashboard">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">🎓</div>
+
+                <div>
+                    <h2>SKITM</h2>
+                    <p>Smart Campus</p>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <button class="nav-btn active" onclick="closeMessage()">
+                    🏠
+                    <span>Home</span>
+                </button>
+
+                <button class="nav-btn" onclick="showMessage('Notices')">
+                    📢
+                    <span>Notices</span>
+                </button>
+
+                <button class="nav-btn" onclick="showAttendance()">
+                    📝
+                    <span>Attendance</span>
+                </button>
+
+                <button class="nav-btn" onclick="showBus()">
+                    🚌
+                    <span>Bus</span>
+                </button>
+
+                <button class="nav-btn" onclick="showMessage('Study')">
+                    📚
+                    <span>Study</span>
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+                SKITM • Smart Campus Initiative
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <div class="main-content">
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div>
+                    <h1>SKITM Smart Campus</h1>
+                    <p>Your campus, smarter.</p>
+                </div>
+
+                <div class="student-profile">
+                    <div class="profile-icon">👤</div>
+                    <span>Hello, Student</span>
+                </div>
+
+            </header>
+
+
+            <main class="content">
+
+                <!-- WELCOME BANNER -->
+
+                <section class="welcome-banner">
+
+                    <div>
+                        <h2>Welcome, Student 👋</h2>
+
+                        <p>
+                            Everything you need in one place.
+                        </p>
+                    </div>
+
+                    <div class="campus-art">
+                        🏫
+                    </div>
+
+                </section>
+
+
+                <!-- FEATURE CARDS -->
+
+                <section class="feature-grid">
+
+                    <button
+                        class="feature-card notices-card"
+                        onclick="showMessage('Notices')"
+                    >
+
+                        <div class="feature-icon">📢</div>
+
+                        <div>
+                            <h3>Notices</h3>
+                            <p>Latest college updates</p>
+                        </div>
+
+                        <span class="arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        class="feature-card attendance-card"
+                        onclick="showAttendance()"
+                    >
+
+                        <div class="feature-icon">📝</div>
+
+                        <div>
+                            <h3>Attendance</h3>
+                            <p>Check your attendance</p>
+                        </div>
+
+                        <span class="arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        class="feature-card bus-card"
+                        onclick="showBus()"
+                    >
+
+                        <div class="feature-icon">🚌</div>
+
+                        <div>
+                            <h3>Bus</h3>
+                            <p>Routes & timings</p>
+                        </div>
+
+                        <span class="arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        class="feature-card study-card"
+                        onclick="showMessage('Study')"
+                    >
+
+                        <div class="feature-icon">📚</div>
+
+                        <div>
+                            <h3>Study</h3>
+                            <p>Subjects & resources</p>
+                        </div>
+
+                        <span class="arrow">→</span>
+
+                    </button>
+
+                </section>
+
+
+                <!-- CONTENT AREA -->
+
+                <section class="dashboard-grid">
+
+                    <!-- NOTICE -->
+
+                    <div class="info-card">
+
+                        <div class="card-heading">
+
+                            <div>
+                                <span class="heading-icon">📢</span>
+                                <h3>Latest Notice</h3>
+                            </div>
+
+                            <button
+                                class="view-btn"
+                                onclick="showMessage('Notices')"
+                            >
+                                View All →
+                            </button>
+
+                        </div>
+
+
+                        <div class="notice-preview">
+
+                            <span class="new-badge">NEW</span>
+
+                            <h4>Welcome to SKITM Smart Campus</h4>
+
+                            <p>
+                                Check college announcements regularly.
+                            </p>
+
+                            <small>
+                                📅 18 September 2026
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ATTENDANCE -->
+
+                    <div class="info-card">
+
+                        <div class="card-heading">
+
+                            <div>
+                                <span class="heading-icon">📝</span>
+                                <h3>Attendance Summary</h3>
+                            </div>
+
+                            <button
+                                class="view-btn"
+                                onclick="showAttendance()"
+                            >
+                                View Details →
+                            </button>
+
+                        </div>
+
+
+                        <div class="attendance-summary">
+
+                            <div class="percentage-circle">
+                                <strong>85%</strong>
+                                <span>Present</span>
+                            </div>
+
+
+                            <div class="attendance-details">
+
+                                <div>
+                                    <span>📅</span>
+                                    <p>
+                                        Total Classes
+                                        <strong>20</strong>
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <span>✅</span>
+                                    <p>
+                                        Attended Classes
+                                        <strong>17</strong>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- QUICK ACCESS -->
+
+                <section class="info-card quick-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <span class="heading-icon">⚡</span>
+                            <h3>Quick Access</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-links">
+
+                        <button onclick="showMessage('Notices')">
+                            📢
+                            <span>Notices</span>
+                        </button>
+
+                        <button onclick="showAttendance()">
+                            📝
+                            <span>Attendance</span>
+                        </button>
+
+                        <button onclick="showBus()">
+                            🚌
+                            <span>Bus</span>
+                        </button>
+
+                        <button onclick="showMessage('Study')">
+                            📚
+                            <span>Study</span>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DYNAMIC CONTENT -->
+
+                <div id="message"></div>
+
+
+                <!-- MOTIVATION -->
+
+                <section class="motivation-card">
+
+                    <div>
+                        <h2>Better Learning<br>Brighter Future</h2>
+
+                        <p>
+                            Stay consistent. Achieve your goals. 🚀
+                        </p>
+                    </div>
+
+                    <div class="motivation-icon">
+                        🎓
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
